@@ -1630,7 +1630,7 @@
                 if (movesHistory.length >= 1) {
                     const lastMove = movesHistory.pop();
                     board[lastMove.index] = '';
-                    currentPlayer = lastMove.player === 'X' ? 'O' : 'X';
+                    currentPlayer = lastMove.player; // Correctly restore the turn to the player who undid the move
                 }
             } else if (gameMode === 'online') {
                 showModal("L'annulation n'est pas prise en charge en mode en ligne pour le moment.");
